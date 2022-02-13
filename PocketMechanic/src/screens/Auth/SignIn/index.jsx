@@ -1,38 +1,43 @@
 import React, {useState} from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import {styles} from './styles';
 import {Formik} from 'formik';
 import * as yup from 'yup';
-import {Pheader} from '../../../components/Header/index';
+import generateValidationSchema from '../../../utils/validators';
+// import {Pheader} from '../../../components/Header/index';
 import {Pinput} from '../../../components/Input/index';
 import {Pbutton} from '../../../components/Button/index';
 import MainView from '../../../components/Layouts/MainView/index';
 import FlexView from '../../../components/Layouts/FlexView/index';
-import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Feather from 'react-native-vector-icons/Feather';
 import theme from '../../../config/Theme/index';
 import {colors} from '../../../config/Colors/index';
 import CheckBox from '@react-native-community/checkbox';
 
-const index = () => {
+const Index = () => {
   const initialValues = {
     Email: '',
     Password: '',
   };
   const [show, setShow] = useState(true);
   const [select, setSelect] = useState(false);
+  const validate = generateValidationSchema(
+    yup,
+    ['Email', 'Password'],
+    ['EMAIL', 'PASSWORD'],
+  );
   return (
     <MainView scrollable>
       <FlexView>
         <View style={styles.main}>
-          <Pheader />
+          {/* <Pheader /> */}
           <FlexView justifyContent="space-around">
             <View style={styles.header}>
               <Text style={styles.headText}>Welcome</Text>
             </View>
           </FlexView>
-          <Formik initialValues={initialValues}>
+          <Formik initialValues={initialValues} validationSchema={validate}>
             {({values, handleChange, handleSubmit}) => (
               <View style={styles.input}>
                 <Pinput
@@ -42,7 +47,7 @@ const index = () => {
                   keyboardType="email-address"
                   onChangeText={handleChange('Email')}
                   leftIcon={
-                    <SimpleLineIcons
+                    <EvilIcons
                       name="envelope"
                       size={theme.iconSize}
                       color={colors.black}
@@ -55,7 +60,7 @@ const index = () => {
                   value={values.Password}
                   onChangeText={handleChange('Password')}
                   leftIcon={
-                    <Feather
+                    <EvilIcons
                       name="lock"
                       size={theme.iconSize}
                       color={colors.black}
@@ -64,7 +69,7 @@ const index = () => {
                   rightIcon={
                     <TouchableOpacity onPress={() => setShow(!show)}>
                       <Ionicons
-                        name={show ? 'eye' : 'eye-off'}
+                        name={show ? 'eye-outline' : 'eye-off-outline'}
                         color={colors.black}
                         size={theme.iconSize}
                       />
@@ -72,7 +77,10 @@ const index = () => {
                   }
                   secureTextEntry={show}
                 />
-                <FlexView justifyContent="space-between" marginBottom={10} marginTop={10}>
+                <FlexView
+                  justifyContent="space-between"
+                  marginBottom={10}
+                  marginTop={20}>
                   <FlexView>
                     <CheckBox value={select} onValueChange={setSelect} />
                     <Text style={styles.texts}>Remember Me</Text>
@@ -100,4 +108,4 @@ const index = () => {
     </MainView>
   );
 };
-export default index;
+export default Index;

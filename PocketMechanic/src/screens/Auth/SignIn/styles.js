@@ -4,6 +4,7 @@ import theme from '../../../config/Theme/index';
 export const styles = StyleSheet.create({
   main: {
     maxWidth: 500,
+    height:500
   },
   header: {
     marginTop: 20,
@@ -30,6 +31,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
+    height:150,
     marginTop: 10,
     marginBottom: 20,
   },
