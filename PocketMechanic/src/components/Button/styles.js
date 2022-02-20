@@ -6,6 +6,6 @@ export const styles = StyleSheet.create({
     maxWidth: 250,
     minWidth: 250,
     padding: 15,
-    borderRadius: 50,
+    borderRadius: 100,
   },
 });

@@ -1,10 +1,12 @@
 import {StyleSheet} from 'react-native';
+import { colors } from '../../../config/Colors';
 import theme from '../../../config/Theme/index';
 
 export const styles = StyleSheet.create({
   main: {
     maxWidth: 500,
-    height:500
+    height: 500,
+    // backgroundColor:'red'
   },
   header: {
     marginTop: 20,
@@ -15,23 +17,23 @@ export const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     textAlign: 'left',
-    color: theme.primary,
+    color: theme.primaryBlue,
   },
   input: {
     flex: 2,
     width: '100%',
     // backgroundColor:'red'
   },
-  check:{
+  check: {
     marginTop: 20,
     marginBottom: 5,
-    alignItems: "flex-start"
+    alignItems: 'flex-start',
   },
   btnView: {
+    width: '100%',
+    height: 100,
     alignItems: 'center',
     justifyContent: 'center',
-    width: '100%',
-    height:150,
     marginTop: 10,
     marginBottom: 20,
   },
@@ -43,9 +45,16 @@ export const styles = StyleSheet.create({
     color: 'grey',
     fontSize: 20,
   },
+  texts1: {
+    color: colors.secondaryBlue,
+    fontSize: 20,
+  },
   signUp: {
-    color: theme.secondary,
+    color: theme.primaryBlue,
     fontWeight: 'bold',
     fontSize: 20,
+  },
+  btn: {
+    color: colors.buttonYellow,
   },
 });

@@ -15,7 +15,8 @@ import theme from '../../../config/Theme/index';
 import {colors} from '../../../config/Colors/index';
 import CheckBox from '@react-native-community/checkbox';
 
-const Index = () => {
+const Index = ({navigation}) => {
+  const {navigate} = navigation;
   const initialValues = {
     Email: '',
     Password: '',
@@ -31,7 +32,13 @@ const Index = () => {
     <MainView scrollable>
       <FlexView>
         <View style={styles.main}>
-          {/* <Pheader /> */}
+          <TouchableOpacity onPress={() => navigate('Splash')}>
+            <Ionicons
+              name="arrow-back-sharp"
+              size={35}
+              color={colors.default}
+            />
+          </TouchableOpacity>
           <FlexView justifyContent="space-around">
             <View style={styles.header}>
               <Text style={styles.headText}>Welcome</Text>
@@ -86,20 +93,20 @@ const Index = () => {
                     <Text style={styles.texts}>Remember Me</Text>
                   </FlexView>
                   <TouchableOpacity>
-                    <Text style={styles.texts}>Forgot Password?</Text>
+                    <Text style={styles.texts1}>Forgot Password?</Text>
                   </TouchableOpacity>
                 </FlexView>
 
                 {/* ButtonView */}
                 <View style={styles.btnView}>
-                  <Pbutton title="SIGN IN" onPress={handleSubmit} />
+                  <Pbutton title="Login" onPress={handleSubmit} buttonStyle={styles.btn}/>
                 </View>
               </View>
             )}
           </Formik>
           <FlexView style={styles.last}>
             <Text style={styles.texts}>Don't have an account? </Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigate('Signup')}>
               <Text style={styles.signUp}>SignUp</Text>
             </TouchableOpacity>
           </FlexView>

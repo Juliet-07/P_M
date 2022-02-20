@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 10,
     borderWidth:1,
-    borderColor:'#21AFFF'
+    borderColor:'black'
   },
   errorMessage: {
     position: 'absolute',
