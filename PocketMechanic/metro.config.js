@@ -7,8 +7,9 @@
 
 module.exports = {
   resolver: {
-    sourceExts: ['jsx','js','ts','tsx'] //add here 
+    sourceExts: ['jsx', 'js', 'ts', 'tsx'], //add here
   },
+  assets: ['./android/app/src/main/assets/fonts'],
   transformer: {
     getTransformOptions: async () => ({
       transform: {
