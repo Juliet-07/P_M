@@ -23,28 +23,30 @@ export const Pinput = props => {
   const [field, meta, helpers] = useField(props);
   return (
     <React.Fragment>
-      <Input
-        name={name}
-        value={value[name]}
-        onChange={handleChange}
-        placeholderTextColor="#7C7C7C"
-        multiline={multiline}
-        numberOfLines={numberOfLines}
-        keyboardType={keyboardType}
-        containerStyle={{...styles.container, ...containerStyles}}
-        inputContainerStyle={{
-          ...styles.inputContainer,
-          ...inputContainerStyles,
-        }}
-        leftIcon={leftIcon}
-        rightIcon={rightIcon}
-        errorMessage={errorMsg}
-        errorStyle={{color: 'red', marginTop: 0}}
-        underlineColorAndroid="transparent"
-        {...props}
-        {...otherProps}
-      />
-      <Text style={styles.errorMessage}>{meta.touched && meta.error}</Text>
+      <View style={styles.main}>
+        <Input
+          name={name}
+          value={value[name]}
+          onChange={handleChange}
+          placeholderTextColor="#7C7C7C"
+          multiline={multiline}
+          numberOfLines={numberOfLines}
+          keyboardType={keyboardType}
+          containerStyle={{...styles.container, ...containerStyles}}
+          inputContainerStyle={{
+            ...styles.inputContainer,
+            ...inputContainerStyles,
+          }}
+          leftIcon={leftIcon}
+          rightIcon={rightIcon}
+          errorMessage={errorMsg}
+          errorStyle={{color: 'red', marginTop: 0}}
+          underlineColorAndroid="transparent"
+          {...props}
+          {...otherProps}
+        />
+        <Text style={styles.errorMessage}>{meta.touched && meta.error}</Text>
+      </View>
     </React.Fragment>
   );
 };

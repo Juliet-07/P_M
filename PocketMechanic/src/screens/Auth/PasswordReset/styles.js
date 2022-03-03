@@ -4,47 +4,42 @@ import {colors} from '../../../config/Colors/index';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 15,
-    marginHorizontal: 10,
-    marginTop: 20,
-  },
-  header: {
-    marginTop: 20,
     width: '100%',
-    // backgroundColor: 'red',
+    paddingVertical: 20,
+    paddingHorizontal: 20,
+    // backgroundColor:'green'
   },
   headerText: {
     fontSize: 30,
     fontWeight: 'bold',
     textAlign: 'left',
-    color: colors.primary,
+    color: colors.primaryBlue,
+    marginTop: 10,
     // fontFamily:'poppingLight'
   },
   message: {
-    color: colors.secondary,
+    color: colors.gray,
     fontSize: 20,
   },
   msgView: {
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
     marginTop: 20,
     marginBottom: 30,
     // backgroundColor:'yellow'
   },
   input: {
     flex: 2,
-    width: '100%',
+    marginTop:20,
     // backgroundColor: 'red',
   },
   btnView: {
-    width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 10,
+    marginTop: 100,
     marginBottom: 20,
-    backgroundColor:colors.secondary
+    // backgroundColor: 'yellow',
+    // back
   },
+  btn:{
+    backgroundColor:colors.buttonBlue
+  }
 });

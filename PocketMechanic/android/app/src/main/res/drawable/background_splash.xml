@@ -3,8 +3,8 @@
     <!-- This is for the picture -->
     <item 
         android:drawable="@drawable/logo" 
-        android:height="80dp" 
-        android:width="320dp" 
+        android:height="60dp" 
+        android:width="300dp" 
         android:gravity="center" 
     />
 </layer-list>

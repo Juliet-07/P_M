@@ -1,15 +1,21 @@
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
+  main: {
+    position: 'relative',
+    marginBottom: 10,
+  },
   container: {
-    marginBottom:5,
-    paddingBottom:5,
+    paddingHorizontal: 0,
+    marginBottom: 3,
+    paddingBottom: 5,
   },
   inputContainer: {
     borderRadius: 5,
     paddingHorizontal: 10,
-    borderWidth:1,
-    borderColor:'black'
+    borderWidth: 0.7,
+    borderColor: '#0B04FF',
+    backgroundColor: '#fff',
   },
   errorMessage: {
     position: 'absolute',

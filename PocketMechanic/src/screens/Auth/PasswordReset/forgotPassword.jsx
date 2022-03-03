@@ -1,28 +1,29 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import {styles} from './styles';
 import {Formik} from 'formik';
 import {Pinput} from '../../../components/Input/index';
 import {Pbutton} from '../../../components/Button/index';
 import FlexView from '../../../components/Layouts/FlexView/index';
-import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import theme from '../../../config/Theme/index';
 import {colors} from '../../../config/Colors/index';
 
-const index = () => {
+const Index = ({navigation}) => {
+  const {navigate} = navigation;
   const initialValues = {
     Email: '',
   };
   return (
     <View style={styles.container}>
-      <FlexView justifyContent="space-around">
-        <View style={styles.header}>
-          <Text style={styles.headerText}>Forgot Password?</Text>
-        </View>
-      </FlexView>
+      <TouchableOpacity onPress={() => navigate('Signin')}>
+        <Ionicons name="arrow-back-sharp" size={35} color={colors.default} />
+      </TouchableOpacity>
+      <Text style={styles.headerText}>Forgot Password?</Text>
       <View style={styles.msgView}>
         <Text style={styles.message}>
-          A password reset link will be sent to your email.
+          We will send you a link to reset it
         </Text>
       </View>
       <Formik initialValues={initialValues}>
@@ -35,7 +36,7 @@ const index = () => {
               keyboardType="email-address"
               onChangeText={handleChange('Email')}
               leftIcon={
-                <SimpleLineIcons
+                <EvilIcons
                   name="envelope"
                   size={theme.iconSize}
                   color={colors.black}
@@ -44,7 +45,11 @@ const index = () => {
             />
             {/* ButtonView */}
             <View style={styles.btnView}>
-              <Pbutton title="SEND CODE" onPress={handleSubmit} type='outline'/>
+              <Pbutton
+                title="SEND CODE"
+                onPress={()=>navigate('Change')}
+                type="outline"
+              />
             </View>
           </View>
         )}
@@ -52,4 +57,4 @@ const index = () => {
     </View>
   );
 };
-export default index;
+export default Index;

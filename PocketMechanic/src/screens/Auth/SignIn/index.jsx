@@ -92,22 +92,26 @@ const Index = ({navigation}) => {
                     <CheckBox value={select} onValueChange={setSelect} />
                     <Text style={styles.texts}>Remember Me</Text>
                   </FlexView>
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={()=>navigate('Forgot')}>
                     <Text style={styles.texts1}>Forgot Password?</Text>
                   </TouchableOpacity>
                 </FlexView>
 
                 {/* ButtonView */}
                 <View style={styles.btnView}>
-                  <Pbutton title="Login" onPress={handleSubmit} buttonStyle={styles.btn}/>
+                  <Pbutton
+                    title="Login"
+                    onPress={handleSubmit}
+                    buttonStyle={styles.btn}
+                  />
                 </View>
               </View>
             )}
           </Formik>
-          <FlexView style={styles.last}>
+          <FlexView>
             <Text style={styles.texts}>Don't have an account? </Text>
             <TouchableOpacity onPress={() => navigate('Signup')}>
-              <Text style={styles.signUp}>SignUp</Text>
+              <Text style={styles.texts1}>SignUp</Text>
             </TouchableOpacity>
           </FlexView>
         </View>

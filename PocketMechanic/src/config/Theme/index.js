@@ -49,7 +49,6 @@ const utilities = {
   standardFieldHeight: Platform.select({default: 64 * MULTIPLIER}),
   borderColor: '#707070',
   borderRadius: 4,
-
   iconSize: 25,
   tabFontSize: 10,
   tabIconSize: 26,

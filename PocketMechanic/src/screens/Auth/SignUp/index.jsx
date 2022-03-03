@@ -126,8 +126,8 @@ const Index = ({navigation}) => {
               <Pinput
                 name="Confirm"
                 placeholder="Confirm Password"
-                value={values.Password}
-                onChangeText={handleChange('Password')}
+                value={values.Confirm}
+                onChangeText={handleChange('Confirm')}
                 leftIcon={
                   <EvilIcons
                     name="lock"
@@ -156,7 +156,7 @@ const Index = ({navigation}) => {
               <View style={styles.btnView}>
                 <Pbutton
                   title="Sign up"
-                  onPress={handleSubmit}
+                  onPress={()=>navigate('Verification')}
                   buttonStyle={styles.btn}
                 />
               </View>

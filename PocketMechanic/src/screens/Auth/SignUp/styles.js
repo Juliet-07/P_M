@@ -46,7 +46,7 @@ export const styles = StyleSheet.create({
   },
   login: {
     color: colors.secondaryBlue,
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
     fontSize: 20,
   },
 });
