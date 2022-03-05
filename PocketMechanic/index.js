@@ -7,6 +7,7 @@ import {AppRegistry} from 'react-native';
 import {ThemeProvider} from 'react-native-elements';
 import {name as appName} from './app.json';
 import Route from './src/config/Route/index';
+import Map from './src/components/Map/index'
 
 const theme = {
   colors: {
@@ -26,4 +27,4 @@ const App = () => (
     <Route />
   </ThemeProvider>
 );
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => Map);

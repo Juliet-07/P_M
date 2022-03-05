@@ -1,13 +1,14 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+    // Project-wide Gradle configuration properties
     ext {
         buildToolsVersion = "30.0.2"
         minSdkVersion = 21
         compileSdkVersion = 30
         targetSdkVersion = 30
         ndkVersion = "21.4.7075529"
-        playServicesVersion = "18.0.2" // or find latest version
+        googlePlayServicesVersion = "18.0.2" // or find latest version
         androidMapsUtilsVersion = "2.3.0"
     }
     repositories {
