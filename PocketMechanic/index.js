@@ -27,4 +27,4 @@ const App = () => (
     <Route />
   </ThemeProvider>
 );
-AppRegistry.registerComponent(appName, () => Map);
+AppRegistry.registerComponent(appName, () => App);
