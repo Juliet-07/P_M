@@ -9,7 +9,7 @@ import Forgot from '../../../screens/Auth/PasswordReset/forgotPassword';
 import Change from '../../../screens/Auth/PasswordReset/changePassword';
 const {Navigator, Screen} = createNativeStackNavigator();
 
-const index = () => {
+const Index = () => {
   useEffect(() => {
     SplashScreen.hide();
   }, []);
@@ -24,4 +24,4 @@ const index = () => {
     </Navigator>
   );
 };
-export default index;
+export default Index;
