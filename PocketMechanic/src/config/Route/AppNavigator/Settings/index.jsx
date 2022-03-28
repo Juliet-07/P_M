@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 const {Navigator, Screen} = createNativeStackNavigator();
 
-function Bookings() {
+function Settings() {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>THIS IS THE CAR SCREEN</Text>
@@ -13,7 +13,7 @@ function Bookings() {
 const Index = () => {
   return (
     <Navigator>
-      <Screen name="Bookings" component={Bookings} />
+      <Screen name="Settings" component={Settings} />
     </Navigator>
   );
 };

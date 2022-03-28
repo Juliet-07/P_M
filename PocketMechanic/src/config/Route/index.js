@@ -56,38 +56,71 @@ const index = () => {
   const [authState, dispatch] = useReducer(authReducer, initialState);
 
   //   SET UP USEMEMO (to change state properly based on the action). Details in if condition will be fetched from database
-  const authContext = useMemo(() => ({
-    signIn: (userEmail, password) => {
-      let userToken;
-      userEmail = null;
-      if (userEmail === 'email' && password === 'pass') {
-        userToken = 'recognizedUser';
-      }
-      dispatch({type: 'LOGIN', id: userEmail, token: userToken});
-    },
-    signOut: () => {
-      dispatch({type:'SIGNOUT'})
-    },
-    signUp: () => {
-      setuserToken('signed-up');
-      setIsLoading(false);
-    },
-  }));
+  const authContext = useMemo(
+    () => ({
+      signIn: async token => {
+        try {
+          await AsyncStorage.setItem('token', token);
+        } catch (e) {
+          ShowMessage(type.ERROR, e.toString());
+        }
+        dispatch({type: 'LOGIN', token});
+      },
+      signUp: async email => {
+        try {
+          await AsyncStorage.setItem('verify', email);
+          console.log(email, 'SIGNUP');
+        } catch (e) {
+          ShowMessage(type.ERROR, e.toString());
+        }
+        dispatch({type: 'SIGNUP', email});
+      },
+      verification: async token => {
+        try {
+          await AsyncStorage.setItem('token', token);
+          console.log(token, 'verification');
+        } catch (e) {
+          ShowMessage(type.ERROR, 'There was error');
+        }
+        dispatch({type: 'VERIFICATION', token});
+      },
+      signOut: async () => {
+        try {
+          await AsyncStorage.clear();
+        } catch (e) {
+          ShowMessage(type.ERROR, 'There was error');
+        }
+        dispatch({type: 'SIGNOUT'});
+      },
+    }),
+    [],
+  );
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
+    setTimeout(async () => {
+      let userToken = null;
+      try {
+        userToken = await AsyncStorage.getItem('token');
+        console.log(userToken);
+      } catch (e) {
+        ShowMessage(type.ERROR, 'There was error');
+      }
+      dispatch({type: 'RETRIEVE_TOKEN', token: userToken});
     }, 1000);
   }, []);
   if (authState.isLoading) {
     return <Loader />;
   }
+  console.log(authState.userToken, 'checking token');
   return (
-    <AuthContext.Provider value={authContext}>
-      <NavigationContainer>
-        {userToken !== null ? <AppNavigator /> : <AuthNavigator />}
-      </NavigationContainer>
-    </AuthContext.Provider>
+    <NavigationContainer>
+      <AppNavigator/>
+    </NavigationContainer>
+    // <AuthContext.Provider value={authContext}>
+    //   <NavigationContainer>
+    //     {authState.userToken ? <AppNavigator /> : <AuthNavigator />}
+    //   </NavigationContainer>
+    // </AuthContext.Provider>
   );
 };
 export default index;

@@ -1,22 +1,28 @@
-import React from 'react';
-import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
+import React, {useEffect} from 'react';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {colors} from '../../Colors/index';
+import SplashScreen from 'react-native-splash-screen';
+import AntDesign from 'react-native-vector-icons/AntDesign'
 import Entypo from 'react-native-vector-icons/Entypo';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Fontisto from 'react-native-vector-icons/Fontisto';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import Home from './Home';
 import Cars from './Cars';
-
-const {Navigator, Tab} = createMaterialBottomTabNavigator();
+import Bookings from './Bookings';
+import Settings from './Settings';
+const Tab = createBottomTabNavigator();
 
 const Index = () => {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
   return (
-    <Navigator initialRouteName="Home">
-      <Screen
+    <Tab.Navigator initialRouteName="Home">
+      <Tab.Screen
         name="Home"
         component={Home}
         options={{
           tabBarLabel: 'Home',
-          header: 'null',
           headerShown: false,
           activeColor: colors.primaryBlue,
           inactiveColor: colors.gray,
@@ -25,21 +31,43 @@ const Index = () => {
           ),
         }}
       />
-      <Screen
+      <Tab.Screen
         name="Cars"
         component={Cars}
-        name="Home"
-        component={Home}
         options={{
           tabBarLabel: 'Cars',
           activeColor: colors.primaryBlue,
           inactiveColor: colors.gray,
           tabBarIcon: ({color, size}) => (
-            <FontAwesome5 name="car" color={color} size={size + 7} />
+            <Fontisto name="car" color={color} size={size + 7} />
           ),
         }}
       />
-    </Navigator>
+      <Tab.Screen
+        name="Bookings"
+        component={Bookings}
+        options={{
+          tabBarLabel: 'Bookings',
+          activeColor: colors.primaryBlue,
+          inactiveColor: colors.gray,
+          tabBarIcon: ({color, size}) => (
+            <Entypo name="bookmark" color={color} size={size + 8} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={Settings}
+        options={{
+          tabBarLabel: 'Settings',
+          activeColor: colors.primaryBlue,
+          inactiveColor: colors.gray,
+          tabBarIcon: ({color, size}) => (
+            <Ionicons name="settings-sharp" color={color} size={size + 7} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
   );
 };
 export default Index;

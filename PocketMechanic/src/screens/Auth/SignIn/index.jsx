@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {styles} from './styles';
 import {Formik} from 'formik';
@@ -14,9 +14,11 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import theme from '../../../config/Theme/index';
 import {colors} from '../../../config/Colors/index';
 import CheckBox from '@react-native-community/checkbox';
+import {AuthContext} from '../../../context';
 
 const Index = ({navigation}) => {
   const {navigate} = navigation;
+  const {signIn} = useContext(AuthContext);
   const initialValues = {
     Email: '',
     Password: '',
@@ -28,6 +30,7 @@ const Index = ({navigation}) => {
     ['Email', 'Password'],
     ['EMAIL', 'PASSWORD'],
   );
+  // const [userLogin,{loading,error}]
   return (
     <MainView scrollable>
       <FlexView>
@@ -92,7 +95,7 @@ const Index = ({navigation}) => {
                     <CheckBox value={select} onValueChange={setSelect} />
                     <Text style={styles.texts}>Remember Me</Text>
                   </FlexView>
-                  <TouchableOpacity onPress={()=>navigate('Forgot')}>
+                  <TouchableOpacity onPress={() => navigate('Forgot')}>
                     <Text style={styles.texts1}>Forgot Password?</Text>
                   </TouchableOpacity>
                 </FlexView>
