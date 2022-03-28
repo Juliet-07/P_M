@@ -81,7 +81,7 @@
 // export default Map;
 
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Modal} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 
@@ -91,23 +91,25 @@ const Map = () => {
   }, []);
   return (
     <View style={styles.container}>
-      <MapView
-        style={styles.map}
-        initialRegion={{
-          latitude: 0,
-          longitude: 0,
-          latitudeDelta: 0.05,
-          longitudeDelta: 0.05,
-        }}>
-        <Marker
-          coordinate={{
-            latitude: 5.10658,
-            longitude: 7.36667,
-          }}
-          title="LearnFactory"
-          description="This is where the magic happens"
-        />
-      </MapView>
+      {/* <Modal visible={true}> */}
+        <MapView
+          style={styles.map}
+          initialRegion={{
+            latitude: 0,
+            longitude: 0,
+            latitudeDelta: 0.05,
+            longitudeDelta: 0.05,
+          }}>
+          <Marker
+            coordinate={{
+              latitude: 5.10658,
+              longitude: 7.36667,
+            }}
+            title="LearnFactory"
+            description="This is where the magic happens"
+          />
+        </MapView>
+      {/* </Modal> */}
     </View>
   );
 };
