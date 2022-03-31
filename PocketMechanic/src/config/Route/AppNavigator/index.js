@@ -36,6 +36,7 @@ const Index = () => {
         component={Cars}
         options={{
           tabBarLabel: 'Cars',
+          headerShown: false,
           activeColor: colors.primaryBlue,
           inactiveColor: colors.gray,
           tabBarIcon: ({color, size}) => (
@@ -48,6 +49,7 @@ const Index = () => {
         component={Bookings}
         options={{
           tabBarLabel: 'Bookings',
+          headerShown: false,
           activeColor: colors.primaryBlue,
           inactiveColor: colors.gray,
           tabBarIcon: ({color, size}) => (
@@ -60,6 +62,7 @@ const Index = () => {
         component={Settings}
         options={{
           tabBarLabel: 'Settings',
+          headerShown: false,
           activeColor: colors.primaryBlue,
           inactiveColor: colors.gray,
           tabBarIcon: ({color, size}) => (

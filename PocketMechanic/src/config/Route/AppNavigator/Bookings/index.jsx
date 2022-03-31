@@ -1,18 +1,11 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Bookings from '../../../../screens/App/Bookings';
 const {Navigator, Screen} = createNativeStackNavigator();
 
-function Bookings() {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>THIS IS THE CAR SCREEN</Text>
-    </View>
-  );
-}
 const Index = () => {
   return (
-    <Navigator>
+    <Navigator headerMode="none">
       <Screen name="Bookings" component={Bookings} />
     </Navigator>
   );

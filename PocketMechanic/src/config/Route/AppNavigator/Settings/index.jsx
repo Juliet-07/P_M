@@ -1,18 +1,11 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Settings from '../../../../screens/App/Settings';
 const {Navigator, Screen} = createNativeStackNavigator();
 
-function Settings() {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>THIS IS THE CAR SCREEN</Text>
-    </View>
-  );
-}
 const Index = () => {
   return (
-    <Navigator>
+    <Navigator headerMode="none">
       <Screen name="Settings" component={Settings} />
     </Navigator>
   );
