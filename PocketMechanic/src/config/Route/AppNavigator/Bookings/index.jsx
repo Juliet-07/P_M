@@ -1,12 +1,13 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Bookings from '../../../../screens/App/Bookings';
+import DetailsScreen from '../../../../screens/App/Bookings/DetailsScreen/index';
+
 const {Navigator, Screen} = createNativeStackNavigator();
 
 const Index = () => {
   return (
     <Navigator headerMode="none">
-      <Screen name="Bookings" component={Bookings} />
+      <Screen name="Details" component={DetailsScreen} />
     </Navigator>
   );
 };

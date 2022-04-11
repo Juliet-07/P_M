@@ -51,6 +51,46 @@ export const Pinput = props => {
   );
 };
 
+// PLAIN INPUT WITHOUT FORMIK
+export const InputPlain = props => {
+  const {
+    name,
+    value,
+    keyboardType,
+    multiline,
+    rightIcon,
+    leftIcon,
+    containerStyle,
+    handleChange,
+    errorMsg,
+    containerStyles,
+    inputContainerStyles,
+    ...otherProps
+  } = props;
+  return (
+    <React.Fragment>
+      <Input
+        name={name}
+        value={value[name]}
+        onChange={handleChange}
+        placeholderTextColor="#7C7C7C"
+        keyboardType={keyboardType}
+        containerStyle={{...styles.container, ...containerStyles}}
+        inputContainerStyle={{
+          ...styles.inputContainer,
+          ...inputContainerStyles,
+        }}
+        leftIcon={leftIcon}
+        rightIcon={rightIcon}
+        errorMessage={errorMsg}
+        errorStyle={{color: 'red', marginTop: 0}}
+        underlineColorAndroid="transparent"
+        {...props}
+        {...otherProps}
+      />
+    </React.Fragment>
+  );
+};
 Pinput.propTypes = {
   name: propTypes.string.isRequired,
   value: propTypes.string.isRequired,
@@ -58,4 +98,12 @@ Pinput.propTypes = {
   containerStyles: propTypes.object,
   inputContainerStyles: propTypes.object,
   errorMsg: propTypes.string,
+};
+InputPlain.propTypes = {
+  name: propTypes.string.isRequired,
+  value: propTypes.string.isRequired,
+  keyboardType: propTypes.string,
+  errorMsg: propTypes.string,
+  containerStyles: propTypes.object,
+  inputContainerStyles: propTypes.object,
 };
