@@ -1,92 +1,67 @@
 import {StyleSheet} from 'react-native';
 import {colors} from '../../config/Colors';
-
 export const styles = StyleSheet.create({
-  accordionContainer: {
+  container: {
+    // flex: 1,
     backgroundColor: 'white',
-    paddingLeft: 19,
-    paddingRight: 19,
-    marginTop: 18,
+    // padding: 40,
+    padding: 16,
   },
-  titleContainer: {
-    // height: 45,
-    borderRadius: 1,
-    justifyContent: 'center',
-    // backgroundColor: colors.secondaryBlue,
+  dropdown: {
+    height: 50,
+    borderColor: colors.gray,
+    borderWidth: 0.5,
+    borderRadius: 8,
+    paddingHorizontal: 8,
+    // backgroundColor: 'white',
+    // borderBottomColor: 'gray',
+    // borderBottomWidth: 0.5,
+    // marginTop: 20,
   },
-  textContainer: {
-    flexDirection: 'row',
-    height: 35,
-    width: '90%',
-    borderRadius: 0,
-    alignSelf: 'center',
-    marginTop: 5,
-    justifyContent: 'space-between',
-  },
-  titleContainerText: {
-    color: '#FFFFFF',
-    fontSize: 18,
-    padding: 5,
-  },
-  iconContainer: {
-    height: 20,
-    width: 20,
-    borderRadius: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 6,
-    backgroundColor: '#FFFFFF',
+  dropdown2: {
+    backgroundColor: 'white',
+    borderColor: colors.gray,
+    borderWidth: 0.5,
+    marginTop: 20,
+    padding: 8,
   },
   icon: {
-    color: 'black',
-    fontSize: 25,
+    marginRight: 5,
+    // width: 18,
+    // height: 18,
   },
-  contentContainer: {
-    backgroundColor: 'black',
-    flexDirection:'column'
-  },
-  fullNameContainer: {
-    backgroundColor: '#EFEFEF',
-    marginTop: 12,
+  item: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    // justifyContent:"space-between"
+    paddingVertical: 17,
+    paddingHorizontal: 4,
   },
-  fullName: {
-    backgroundColor: '#EFEFEF',
-    height: 45,
-    marginLeft: 20,
-    width: '80%',
+  textItem: {
+    flex: 1,
     fontSize: 16,
-    textAlignVertical: 'center',
   },
-  addressContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#EFEFEF',
-    marginTop: 12,
+  label: {
+    position: 'absolute',
+    backgroundColor: 'white',
+    left: 22,
+    top: 8,
+    zIndex: 999,
+    paddingHorizontal: 8,
+    fontSize: 14,
   },
-  address: {
-    height: 45,
-    backgroundColor: '#EFEFEF',
-    marginLeft: 20,
-    width: '80%',
+  placeholderStyle: {
     fontSize: 16,
-    textAlignVertical: 'center',
   },
-  NumberContainer: {
-    backgroundColor: '#EFEFEF',
-    marginTop: 12,
-    alignItems: 'center',
-    flexDirection: 'row',
-    // justifyContent: "center"
-  },
-  Number: {
-    backgroundColor: '#EFEFEF',
-    height: 45,
-    marginLeft: 20,
-    width: '80%',
+  selectedTextStyle: {
     fontSize: 16,
-    textAlignVertical: 'center',
+  },
+  iconStyle: {
+    width: 20,
+    height: 20,
+  },
+  inputSearchStyle: {
+    height: 40,
+    fontSize: 16,
   },
 });

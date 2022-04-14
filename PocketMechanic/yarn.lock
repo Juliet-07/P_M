@@ -5885,6 +5885,11 @@ react-native-confirmation-code-input@^1.0.4:
     lodash "^4.17.4"
     prop-types "^15.5.10"
 
+react-native-element-dropdown@^1.8.7:
+  version "1.8.7"
+  resolved "https://registry.yarnpkg.com/react-native-element-dropdown/-/react-native-element-dropdown-1.8.7.tgz#4eaa1b432857f1150534cb01d739ba83c898db06"
+  integrity sha512-ASaM0fagpDJZ4n/zodCH8SOyiowrmnZ54xZRCTEB3wDm4rBHIEJLXyup+a1Y4Jpg5wj2DZTVE9aF3o5pxukPIQ==
+
 react-native-elements@^3.4.2:
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/react-native-elements/-/react-native-elements-3.4.2.tgz#66602be9c5e0e0a2a831913adec80ff6518d1ee2"
