@@ -15,10 +15,11 @@ import theme from '../../../config/Theme/index';
 import {colors} from '../../../config/Colors/index';
 import CheckBox from '@react-native-community/checkbox';
 import {AuthContext} from '../../../context';
+import Accordion from '../../../components/Accordion';
 
 const Index = ({navigation}) => {
   const {navigate} = navigation;
-  const {signIn} = useContext(AuthContext);
+  // const {signIn} = useContext(AuthContext);
   const initialValues = {
     Email: '',
     Password: '',
@@ -117,6 +118,11 @@ const Index = ({navigation}) => {
               <Text style={styles.texts1}>SignUp</Text>
             </TouchableOpacity>
           </FlexView>
+          {/* <View>
+            <Accordion title={'PickUp Details'} />
+            <Accordion Title={'Dropoff Details'} />
+            <Accordion Title={'Seleted Categories'} />
+          </View> */}
         </View>
       </FlexView>
     </MainView>

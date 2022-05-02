@@ -24,7 +24,7 @@ const theme = {
 };
 const App = () => (
   <ThemeProvider theme={theme}>
-    <Accordion />
+    <Route />
   </ThemeProvider>
 );
 AppRegistry.registerComponent(appName, () => App);
