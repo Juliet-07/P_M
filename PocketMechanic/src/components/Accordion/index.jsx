@@ -17,7 +17,7 @@ const data = [
   {label: 'Item 8', value: '8'},
 ];
 
-const Accordion = ({title, props}) => {
+const Accordion = ({title, placeholder, props}) => {
   const [value, setValue] = useState(null);
   const [isFocus, setIsFocus] = useState(false);
   useEffect(() => {
@@ -37,12 +37,12 @@ const Accordion = ({title, props}) => {
     <View style={styles.container}>
       {renderLabel()}
       <Dropdown
-        title={title}
         data={data}
+        title={title}
+        placeholder={placeholder}
         search
         searchPlaceholder="Search"
         value={value}
-        placeholder="Select item"
         labelField="label"
         valueField="value"
         maxHeight={300}

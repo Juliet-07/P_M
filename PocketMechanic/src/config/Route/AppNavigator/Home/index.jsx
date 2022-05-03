@@ -1,12 +1,12 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Home from '../../../../screens/App/Home';
+import HomeMap from '../../../../screens/App/Home/index';
 const {Navigator, Screen} = createNativeStackNavigator();
 
 const Index = () => {
   return (
     <Navigator headerMode="none">
-      <Screen name="Home" component={Home} />
+      <Screen name="HomeMap" component={HomeMap} />
     </Navigator>
   );
 };

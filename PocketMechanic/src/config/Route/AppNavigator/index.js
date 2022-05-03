@@ -6,7 +6,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign'
 import Entypo from 'react-native-vector-icons/Entypo';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Home from './Home';
+import HomeScreen from './Home';
 import Cars from './Cars';
 import Bookings from './Bookings';
 import Settings from './Settings';
@@ -20,7 +20,7 @@ const Index = () => {
     <Tab.Navigator initialRouteName="Home">
       <Tab.Screen
         name="Home"
-        component={Home}
+        component={HomeScreen}
         options={{
           tabBarLabel: 'Home',
           headerShown: false,

@@ -7,7 +7,8 @@ import {AppRegistry} from 'react-native';
 import {ThemeProvider} from 'react-native-elements';
 import {name as appName} from './app.json';
 import Route from './src/config/Route/index';
-import Accordion from './src/components/Accordion/index'
+import Accordion from './src/components/Accordion/index';
+import OnboardingScreen from './src/screens/Auth/Onboarding/index';
 
 const theme = {
   colors: {
@@ -24,7 +25,7 @@ const theme = {
 };
 const App = () => (
   <ThemeProvider theme={theme}>
-    <Route />
+    <OnboardingScreen />
   </ThemeProvider>
 );
 AppRegistry.registerComponent(appName, () => App);

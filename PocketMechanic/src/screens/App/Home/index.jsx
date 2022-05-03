@@ -1,16 +1,12 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import Accordion from '../../../components/Accordion';
+import Accordion from '../../../components/Accordion/index';
 
 const Index = () => {
   return (
     <View>
       <Text>THIS IS THE HOME SCREEN</Text>
-      <View>
-        <Accordion title={'PickUp Details'} />
-        <Accordion Title={'Dropoff Details'} />
-        <Accordion Title={'Seleted Categories'} />
-      </View>
+      <Text>Map and modal screens will be rendered here</Text>
     </View>
   );
 };
