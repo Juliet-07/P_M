@@ -7,9 +7,9 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomeScreen from './Home';
-import Cars from './Cars';
+import CarScreen from './Cars';
 import Bookings from './Bookings';
-import Settings from './Settings';
+import SettingScreen from './Settings';
 const Tab = createBottomTabNavigator();
 
 const Index = () => {
@@ -32,8 +32,8 @@ const Index = () => {
         }}
       />
       <Tab.Screen
-        name="Cars"
-        component={Cars}
+        name="CarScreen"
+        component={CarScreen}
         options={{
           tabBarLabel: 'Cars',
           headerShown: false,
@@ -58,8 +58,8 @@ const Index = () => {
         }}
       />
       <Tab.Screen
-        name="Settings"
-        component={Settings}
+        name="SettingScreen"
+        component={SettingScreen}
         options={{
           tabBarLabel: 'Settings',
           headerShown: false,

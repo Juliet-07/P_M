@@ -4,10 +4,6 @@ import {styles} from './styles';
 
 // to be rendered in subtitle of onboarding
 const Title = ({title}) => {
-  return (
-    <View>
-      <Text style={styles.text}>{title}</Text>
-    </View>
-  );
+  return <Text style={styles.text}>{title}</Text>;
 };
 export default Title;

@@ -114,7 +114,8 @@ const index = () => {
   console.log(authState.userToken, 'checking token');
   return (
     <NavigationContainer>
-      <AppNavigator/>
+      {/* <AuthNavigator /> */}
+      <AppNavigator />
     </NavigationContainer>
     // <AuthContext.Provider value={authContext}>
     //   <NavigationContainer>

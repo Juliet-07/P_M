@@ -1,15 +1,11 @@
 import {StyleSheet} from 'react-native';
+import {colors} from '../../config/Colors/index';
 
 export const styles = StyleSheet.create({
-  container: {
-    flex: 2,
-    justifyContent: 'center',
-    alignItems: 'center',
-    // marginTop:16
-  },
   text: {
-    fontSize: 16,
-    // fontWeight: 'bold',
-    color: 'black',
+    fontSize: 14,
+    color: colors.gray,
+    textAlign: 'center',
+    padding:15
   },
 });
