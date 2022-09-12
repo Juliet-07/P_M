@@ -16,7 +16,7 @@ const Index = () => {
   }, []);
   return (
     <Navigator screenOptions={{headerShown: false}}>
-      {/* <Screen name="Onboarding" component={Onboarding} /> */}
+      <Screen name="Onboarding" component={Onboarding} />
       <Screen name="Splash" component={Splash} />
       <Screen name="Signup" component={Signup} />
       <Screen name="Signin" component={Signin} />
